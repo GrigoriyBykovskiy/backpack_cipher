@@ -9,10 +9,10 @@ typedef struct{
 } TBackpack;
 
 TBackpack* init_tbackpack(void);
-int set_p_tbackpack(TBackpack* tBackpack, unsigned* p);
-int set_b_tbackpack(TBackpack* tBackpack, unsigned* b);
-int set_N_tbackpack(TBackpack* tBackpack, unsigned N);
-int set_c_tbackpack(TBackpack* tBackpack, unsigned c);
+void set_p_tbackpack(TBackpack* tbackpack, unsigned* p);
+void set_b_tbackpack(TBackpack* tbackpack, unsigned* b);
+void set_N_tbackpack(TBackpack* tbackpack, unsigned N);
+void set_c_tbackpack(TBackpack* tbackpack, unsigned c);
 
 int generate_public_key();
 int encrypt();

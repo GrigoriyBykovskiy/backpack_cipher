@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/home/grigoriy/projects/backpack_cipher/BACKPACK.c
+BACKPACK.h
+/home/grigoriy/projects/backpack_cipher/BACKPACK.h
+stdlib.h
+-
+stdio.h
+-
+
+/home/grigoriy/projects/backpack_cipher/BACKPACK.h
+
 /home/grigoriy/projects/backpack_cipher/main.c
 stdio.h
 -
