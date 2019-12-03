@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-E:/CLionProjects/backpack_cipher/main.c
+/home/grigoriy/projects/backpack_cipher/main.c
 stdio.h
 -
 

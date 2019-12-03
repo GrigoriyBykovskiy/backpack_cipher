@@ -3,4 +3,4 @@ project(backpack_cipher C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(backpack_cipher main.c)
+add_executable(backpack_cipher main.c BACKPACK.c BACKPACK.h)

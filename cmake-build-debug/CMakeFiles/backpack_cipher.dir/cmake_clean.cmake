@@ -1,9 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/backpack_cipher.dir/main.c.obj"
-  "backpack_cipher.exe"
-  "backpack_cipher.exe.manifest"
+  "CMakeFiles/backpack_cipher.dir/BACKPACK.c.o"
+  "CMakeFiles/backpack_cipher.dir/main.c.o"
+  "backpack_cipher"
   "backpack_cipher.pdb"
-  "libbackpack_cipher.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
