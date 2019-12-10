@@ -4,5 +4,6 @@
 CMakeFiles/backpack_cipher.dir/BACKPACK.c.o: ../BACKPACK.c
 CMakeFiles/backpack_cipher.dir/BACKPACK.c.o: ../BACKPACK.h
 
+CMakeFiles/backpack_cipher.dir/main.c.o: ../BACKPACK.h
 CMakeFiles/backpack_cipher.dir/main.c.o: ../main.c
 

@@ -10,8 +10,8 @@ TBackpack* init_tbackpack(void)
 
     if(tbackpack != NULL)
     {
-        tbackpack->private_key = (unsigned*)calloc(KEY_LENGTH * sizeof(unsigned));
-        tbackpack->public_key = (unsigned*)calloc(KEY_LENGTH * sizeof(unsigned));
+        tbackpack->private_key =(unsigned*) calloc(KEY_LENGTH, sizeof(unsigned));
+        tbackpack->public_key = (unsigned*) calloc(KEY_LENGTH, sizeof(unsigned));
         tbackpack->N = 0;
         tbackpack->c = 0;
     }
@@ -60,20 +60,20 @@ void print_tbackpack(TBackpack* tbackpack)
 {
     fprintf(stdout, "=|                                                  |=\n");
     fprintf(stdout, "=|__________________TBACKPACK_DATA__________________|=\n");
-    fprintf(stdout, "=|public key:                                       |=\n");
+    fprintf(stdout, "=|public key:                                       |=\n ");
 
     for (int i = 0; i < KEY_LENGTH; i++)
         fprintf(stdout," %u ",tbackpack->public_key[i]);
 
-    fprintf(stdout,"\n=|private key:                       |=\n");
+    fprintf(stdout,"\n=|private key:                                      |=\n ");
 
     for (int i = 0; i < KEY_LENGTH; i++)
         fprintf(stdout," %u ",tbackpack->private_key[i]);
 
-    fprintf(stdout,"\n=|N:                       |=\n");
-    fprintf(stdout, "%u", tbackpack->N);
-    fprintf(stdout,"\n=|c:                       |=\n");
-    fprintf(stdout, "%u", tbackpack->N);
+    fprintf(stdout,"\n=|N:                                                |=\n");
+    fprintf(stdout, "  %u", tbackpack->N);
+    fprintf(stdout,"\n=|c:                                                |=\n");
+    fprintf(stdout, "  %u", tbackpack->N);
 
     fprintf(stdout, "\n=|__________________________________________________|=\n");
     fprintf(stdout, "=|                                                  |=\n");

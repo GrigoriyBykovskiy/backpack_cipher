@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/grigoriy/projects/backpack_cipher/BACKPACK.c" "/home/grigoriy/projects/backpack_cipher/cmake-build-debug/CMakeFiles/backpack_cipher.dir/BACKPACK.c.o"
-  "/home/grigoriy/projects/backpack_cipher/main.c" "/home/grigoriy/projects/backpack_cipher/cmake-build-debug/CMakeFiles/backpack_cipher.dir/main.c.o"
+  "/home/grigoriy/CLionProjects/backpack_cipher/BACKPACK.c" "/home/grigoriy/CLionProjects/backpack_cipher/cmake-build-debug/CMakeFiles/backpack_cipher.dir/BACKPACK.c.o"
+  "/home/grigoriy/CLionProjects/backpack_cipher/main.c" "/home/grigoriy/CLionProjects/backpack_cipher/cmake-build-debug/CMakeFiles/backpack_cipher.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

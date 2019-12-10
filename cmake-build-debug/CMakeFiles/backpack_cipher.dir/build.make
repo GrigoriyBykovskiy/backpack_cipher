@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/grigoriy/clion-2019.2.5/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/grigoriy/Загрузки/CLion-2019.3/clion-2019.3/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/grigoriy/clion-2019.2.5/bin/cmake/linux/bin/cmake -E remove -f
+RM = /home/grigoriy/Загрузки/CLion-2019.3/clion-2019.3/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/grigoriy/projects/backpack_cipher
+CMAKE_SOURCE_DIR = /home/grigoriy/CLionProjects/backpack_cipher
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/grigoriy/projects/backpack_cipher/cmake-build-debug
+CMAKE_BINARY_DIR = /home/grigoriy/CLionProjects/backpack_cipher/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/backpack_cipher.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/backpack_cipher.dir/flags.make
 
 CMakeFiles/backpack_cipher.dir/main.c.o: CMakeFiles/backpack_cipher.dir/flags.make
 CMakeFiles/backpack_cipher.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/grigoriy/projects/backpack_cipher/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/backpack_cipher.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/backpack_cipher.dir/main.c.o   -c /home/grigoriy/projects/backpack_cipher/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/grigoriy/CLionProjects/backpack_cipher/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/backpack_cipher.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/backpack_cipher.dir/main.c.o   -c /home/grigoriy/CLionProjects/backpack_cipher/main.c
 
 CMakeFiles/backpack_cipher.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/backpack_cipher.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/grigoriy/projects/backpack_cipher/main.c > CMakeFiles/backpack_cipher.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/grigoriy/CLionProjects/backpack_cipher/main.c > CMakeFiles/backpack_cipher.dir/main.c.i
 
 CMakeFiles/backpack_cipher.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/backpack_cipher.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/grigoriy/projects/backpack_cipher/main.c -o CMakeFiles/backpack_cipher.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/grigoriy/CLionProjects/backpack_cipher/main.c -o CMakeFiles/backpack_cipher.dir/main.c.s
 
 CMakeFiles/backpack_cipher.dir/BACKPACK.c.o: CMakeFiles/backpack_cipher.dir/flags.make
 CMakeFiles/backpack_cipher.dir/BACKPACK.c.o: ../BACKPACK.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/grigoriy/projects/backpack_cipher/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/backpack_cipher.dir/BACKPACK.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/backpack_cipher.dir/BACKPACK.c.o   -c /home/grigoriy/projects/backpack_cipher/BACKPACK.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/grigoriy/CLionProjects/backpack_cipher/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/backpack_cipher.dir/BACKPACK.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/backpack_cipher.dir/BACKPACK.c.o   -c /home/grigoriy/CLionProjects/backpack_cipher/BACKPACK.c
 
 CMakeFiles/backpack_cipher.dir/BACKPACK.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/backpack_cipher.dir/BACKPACK.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/grigoriy/projects/backpack_cipher/BACKPACK.c > CMakeFiles/backpack_cipher.dir/BACKPACK.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/grigoriy/CLionProjects/backpack_cipher/BACKPACK.c > CMakeFiles/backpack_cipher.dir/BACKPACK.c.i
 
 CMakeFiles/backpack_cipher.dir/BACKPACK.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/backpack_cipher.dir/BACKPACK.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/grigoriy/projects/backpack_cipher/BACKPACK.c -o CMakeFiles/backpack_cipher.dir/BACKPACK.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/grigoriy/CLionProjects/backpack_cipher/BACKPACK.c -o CMakeFiles/backpack_cipher.dir/BACKPACK.c.s
 
 # Object files for target backpack_cipher
 backpack_cipher_OBJECTS = \
@@ -95,7 +95,7 @@ backpack_cipher: CMakeFiles/backpack_cipher.dir/main.c.o
 backpack_cipher: CMakeFiles/backpack_cipher.dir/BACKPACK.c.o
 backpack_cipher: CMakeFiles/backpack_cipher.dir/build.make
 backpack_cipher: CMakeFiles/backpack_cipher.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/grigoriy/projects/backpack_cipher/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable backpack_cipher"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/grigoriy/CLionProjects/backpack_cipher/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable backpack_cipher"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/backpack_cipher.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +108,6 @@ CMakeFiles/backpack_cipher.dir/clean:
 .PHONY : CMakeFiles/backpack_cipher.dir/clean
 
 CMakeFiles/backpack_cipher.dir/depend:
-	cd /home/grigoriy/projects/backpack_cipher/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/grigoriy/projects/backpack_cipher /home/grigoriy/projects/backpack_cipher /home/grigoriy/projects/backpack_cipher/cmake-build-debug /home/grigoriy/projects/backpack_cipher/cmake-build-debug /home/grigoriy/projects/backpack_cipher/cmake-build-debug/CMakeFiles/backpack_cipher.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/grigoriy/CLionProjects/backpack_cipher/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/grigoriy/CLionProjects/backpack_cipher /home/grigoriy/CLionProjects/backpack_cipher /home/grigoriy/CLionProjects/backpack_cipher/cmake-build-debug /home/grigoriy/CLionProjects/backpack_cipher/cmake-build-debug /home/grigoriy/CLionProjects/backpack_cipher/cmake-build-debug/CMakeFiles/backpack_cipher.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/backpack_cipher.dir/depend
 

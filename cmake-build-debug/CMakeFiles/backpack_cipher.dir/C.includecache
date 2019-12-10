@@ -6,17 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/grigoriy/projects/backpack_cipher/BACKPACK.c
+/home/grigoriy/CLionProjects/backpack_cipher/BACKPACK.h
+
+/home/grigoriy/CLionProjects/backpack_cipher/main.c
+stdio.h
+-
 BACKPACK.h
-/home/grigoriy/projects/backpack_cipher/BACKPACK.h
-stdlib.h
--
-stdio.h
--
-
-/home/grigoriy/projects/backpack_cipher/BACKPACK.h
-
-/home/grigoriy/projects/backpack_cipher/main.c
-stdio.h
--
+/home/grigoriy/CLionProjects/backpack_cipher/BACKPACK.h
 
