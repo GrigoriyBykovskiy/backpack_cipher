@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/grigoriy/Загрузки/CLion-2019.3/clion-2019.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/grigoriy/clion-2019.2.5/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/grigoriy/Загрузки/CLion-2019.3/clion-2019.3/bin/cmake/linux/bin/cmake -E remove -f
+RM = /home/grigoriy/clion-2019.2.5/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/grigoriy/CLionProjects/backpack_cipher/cmake-build-debu
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/grigoriy/Загрузки/CLion-2019.3/clion-2019.3/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/grigoriy/clion-2019.2.5/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/grigoriy/Загрузки/CLion-2019.3/clion-2019.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/grigoriy/clion-2019.2.5/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache

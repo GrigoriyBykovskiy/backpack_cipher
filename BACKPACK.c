@@ -1,4 +1,5 @@
 #define KEY_LENGTH 8
+#define OUTPUTFILENAME "output.txt"
 #include "BACKPACK.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -63,12 +64,12 @@ void print_tbackpack(TBackpack* tbackpack)
     fprintf(stdout, "=|public key:                                       |=\n ");
 
     for (int i = 0; i < KEY_LENGTH; i++)
-        fprintf(stdout," %u ",tbackpack->public_key[i]);
+        fprintf(stdout," %4u ",tbackpack->public_key[i]);
 
     fprintf(stdout,"\n=|private key:                                      |=\n ");
 
     for (int i = 0; i < KEY_LENGTH; i++)
-        fprintf(stdout," %u ",tbackpack->private_key[i]);
+        fprintf(stdout," %4u ",tbackpack->private_key[i]);
 
     fprintf(stdout,"\n=|N:                                                |=\n");
     fprintf(stdout, "  %u", tbackpack->N);
@@ -76,16 +77,127 @@ void print_tbackpack(TBackpack* tbackpack)
     fprintf(stdout, "  %u", tbackpack->N);
 
     fprintf(stdout, "\n=|__________________________________________________|=\n");
-    fprintf(stdout, "=|                                                  |=\n");
 };
 
 void generate_public_key_tbackpack(TBackpack* tbackpack)
 {
     for (int i = 0; i < KEY_LENGTH; i++)
     {
-        tbackpack->public_key = (tbackpack->private_key[i] * tbackpack->c) % (tbackpack->N);
+        tbackpack->public_key[i] = (tbackpack->private_key[i] * tbackpack->c) % (tbackpack->N);
     }
 };
 
-int encrypt(TBackpack* backpack);
-int decrypt(TBackpack* backpack);
+void get_bits_array(char symbol, unsigned* array_of_bits) // little-endian format
+{
+    for (int i = 0; i < KEY_LENGTH; i++)
+    {
+        if ((symbol & (1 << i)) == 0)
+            array_of_bits[i] = 0;
+        else
+            array_of_bits[i] = 1;
+    }
+};
+
+int extended_gcd(int a, int b)//input N and c
+{
+    int p=1, q=0, r=0, s=1, x, y;
+    while (a && b) {
+        if (a>=b) {
+            a = a - b;
+            p = p - r;
+            q = q - s;
+        } else
+        {
+            b = b - a;
+            r = r - p;
+            s = s - q;
+        }
+    }
+    if (a) {
+        x = p;
+        y = q;
+    }else
+    {
+        x = r;
+        y = s;
+    }
+    //printf("\n%d %d\n",x,y);
+    return y;
+}
+
+int encrypt(char* filename, TBackpack* backpack)
+{
+    FILE *input_text;
+    FILE *output_text;
+    if (((input_text = fopen(filename, "r")) != NULL) && ((output_text = fopen(OUTPUTFILENAME, "w")) != NULL))
+    {
+        char symbol;
+        do
+        {
+            symbol = fgetc(input_text);
+            printf("%d\n", symbol);
+            unsigned array_of_bits[KEY_LENGTH];
+            get_bits_array(symbol, &array_of_bits[0]);
+            int tmp = 0;
+            for(int i = KEY_LENGTH; i > -1; i--)// big-endian
+            {
+                if (array_of_bits[i] == 1)
+                {
+                    tmp += backpack->public_key[i];
+                }
+            }
+            printf("%04d\n", tmp);
+            fprintf(output_text,"%04d", tmp);
+
+        } while (symbol != EOF);
+        printf("END ENCRYPTION\n");
+        fclose(input_text);
+        fclose(output_text);
+
+    }
+    else {
+        fprintf(stderr, "Can not open input file!\n");
+        return 0;
+    }
+
+    return 1;
+};
+
+
+
+int decrypt(char* filename, TBackpack* backpack)
+{
+    unsigned inverse_element_c = extended_gcd(backpack->N, backpack->c);
+
+    FILE *input_text;
+
+    if ((input_text = fopen(filename, "r")) != NULL)
+    {
+        char symbol = 0;
+        char tmp[4] = {0, 0, 0, 0};
+        do
+        {
+            fread(&tmp, sizeof(char),4, input_text);
+            int encrypted_symbol = atoi(&tmp);
+            unsigned weight = (encrypted_symbol *  inverse_element_c) % backpack->N;
+            //printf("weith is %u\n", weight);
+            for (int i = 7; i > -1; i--) {
+                if (weight >= backpack->private_key[i])
+                {
+                    weight -= backpack->private_key[i];
+                    symbol |= (1 << i);
+                } else
+                    symbol &= ~(1 << i);
+            }
+            printf("%d\n", symbol);
+            symbol = 0;
+
+        } while (!(feof(input_text)));
+
+    }
+    else {
+        fprintf(stderr, "Can not open input file!\n");
+        return 0;
+    }
+    return 1;
+};

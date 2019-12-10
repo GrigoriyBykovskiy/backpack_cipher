@@ -31,6 +31,9 @@ int main()
     set_tbackpack_c(backpack, tmp_c);
     set_tbackpack_N(backpack, tmp_N);
     set_tbackpack_private_key(backpack, tmp_private_key);
+    generate_public_key_tbackpack(backpack);
     print_tbackpack(backpack);
+    encrypt("test.txt", backpack);
+    decrypt("output.txt", backpack);
     return 0;
 }
