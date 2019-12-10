@@ -2,20 +2,24 @@
 #define BACKPACK_CIPHER_BACKPACK_H
 
 typedef struct{
-    unsigned p[8];
-    unsigned b[8];
+    unsigned* private_key;
+    unsigned* public_key;
+    unsigned S;
     unsigned N;
     unsigned c;
-} TBackpack;
+}TBackpack;
+
 
 TBackpack* init_tbackpack(void);
-void set_p_tbackpack(TBackpack* tbackpack, unsigned* p);
-void set_b_tbackpack(TBackpack* tbackpack, unsigned* b);
-void set_N_tbackpack(TBackpack* tbackpack, unsigned N);
-void set_c_tbackpack(TBackpack* tbackpack, unsigned c);
+void print_tbackpack(TBackpack* tbackpack);
+void set_tbackpack_private_key(TBackpack* tbackpack, unsigned* private_key);
+void set_tbackpack_public_key(TBackpack* tbackpack, unsigned* public_key);
+void set_tbackpack_S(TBackpack* tbackpack, unsigned S);
+void set_tbackpack_N(TBackpack* tbackpack, unsigned N);
+void set_tbackpack_c(TBackpack* tbackpack, unsigned c);
+void generate_public_key_tbackpack(TBackpack* tbackpack);
 
-int generate_public_key();
-int encrypt();
-int decrypt();
+int encrypt(TBackpack* backpack);
+int decrypt(TBackpack* backpack);
 
 #endif //BACKPACK_CIPHER_BACKPACK_H

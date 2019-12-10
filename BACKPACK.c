@@ -1,3 +1,4 @@
+#define KEY_LENGTH 8
 #include "BACKPACK.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -9,14 +10,14 @@ TBackpack* init_tbackpack(void)
 
     if(tbackpack != NULL)
     {
-        tbackpack->p[0] = 0;//may be wrong way
-        tbackpack->b[0] = 0;//i think about it
+        tbackpack->private_key = (unsigned*)calloc(KEY_LENGTH * sizeof(unsigned));
+        tbackpack->public_key = (unsigned*)calloc(KEY_LENGTH * sizeof(unsigned));
         tbackpack->N = 0;
         tbackpack->c = 0;
     }
     else
     {
-        printf("Out of memory!\n");
+        fprintf(stdout,"Out of memory!\n");
         free(tbackpack);
         tbackpack = NULL;
     }
@@ -24,22 +25,67 @@ TBackpack* init_tbackpack(void)
     return tbackpack;
 };
 
-void set_p_tbackpack(TBackpack* tbackpack, unsigned* p)
+void set_tbackpack_private_key(TBackpack* tbackpack, unsigned* private_key)
 {
-    /*some code*/
+    for (int i = 0; i < KEY_LENGTH; i++)
+    {
+        tbackpack->private_key[i] = private_key[i];
+    }
 };
 
-void set_b_tbackpack(TBackpack* tbackpack, unsigned* b)
+void set_tbackpack_public_key(TBackpack* tbackpack, unsigned* public_key)
 {
-    /*some code*/
+    for (int i = 0; i < KEY_LENGTH; i++)
+    {
+        tbackpack->public_key[i] = public_key[i];
+    }
 };
 
-void set_N_tbackpack(TBackpack* tbackpack, unsigned N)
+void set_tbackpack_S(TBackpack* tbackpack, unsigned S)
+{
+    fprintf(stdout,"Not available now. Wait in new update!\n");
+};
+
+void set_tbackpack_N(TBackpack* tbackpack, unsigned N)
 {
     tbackpack->N = N;
 };
 
-void set_c_tbackpack(TBackpack* tbackpack, unsigned c)
+void set_tbackpack_c(TBackpack* tbackpack, unsigned c)
 {
-    tbackpack->N = c;
+    tbackpack->c = c;
 };
+
+void print_tbackpack(TBackpack* tbackpack)
+{
+    fprintf(stdout, "=|                                                  |=\n");
+    fprintf(stdout, "=|__________________TBACKPACK_DATA__________________|=\n");
+    fprintf(stdout, "=|public key:                                       |=\n");
+
+    for (int i = 0; i < KEY_LENGTH; i++)
+        fprintf(stdout," %u ",tbackpack->public_key[i]);
+
+    fprintf(stdout,"\n=|private key:                       |=\n");
+
+    for (int i = 0; i < KEY_LENGTH; i++)
+        fprintf(stdout," %u ",tbackpack->private_key[i]);
+
+    fprintf(stdout,"\n=|N:                       |=\n");
+    fprintf(stdout, "%u", tbackpack->N);
+    fprintf(stdout,"\n=|c:                       |=\n");
+    fprintf(stdout, "%u", tbackpack->N);
+
+    fprintf(stdout, "\n=|__________________________________________________|=\n");
+    fprintf(stdout, "=|                                                  |=\n");
+};
+
+void generate_public_key_tbackpack(TBackpack* tbackpack)
+{
+    for (int i = 0; i < KEY_LENGTH; i++)
+    {
+        tbackpack->public_key = (tbackpack->private_key[i] * tbackpack->c) % (tbackpack->N);
+    }
+};
+
+int encrypt(TBackpack* backpack);
+int decrypt(TBackpack* backpack);
