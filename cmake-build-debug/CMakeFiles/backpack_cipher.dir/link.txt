@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/backpack_cipher.dir/main.c.o CMakeFiles/backpack_cipher.dir/BACKPACK.c.o  -o backpack_cipher 

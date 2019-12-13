@@ -1,12 +1,11 @@
-#ifndef BACKPACK_CIPHER_BACKPACK_H
-#define BACKPACK_CIPHER_BACKPACK_H
+#pragma once
 
-typedef struct{
-    unsigned* private_key;
-    unsigned* public_key;
-    unsigned S;
-    unsigned N;
-    unsigned c;
+typedef struct {
+	unsigned* private_key;
+	unsigned* public_key;
+	unsigned S;
+	unsigned N;
+	unsigned c;
 }TBackpack;
 
 
@@ -18,11 +17,11 @@ void set_tbackpack_S(TBackpack* tbackpack, unsigned S);
 void set_tbackpack_N(TBackpack* tbackpack, unsigned N);
 void set_tbackpack_c(TBackpack* tbackpack, unsigned c);
 void generate_public_key_tbackpack(TBackpack* tbackpack);
+void generate_private_key_tbackpack(TBackpack* tbackpack);
 void unpacking_backpack(TBackpack* backpack, int weigth);
 
+void user_input();
 void get_bits_array(char symbol, unsigned* array_of_bits);
 int extended_gcd(int a, int b);
 int encrypt(char* filename, TBackpack* backpack);
 int decrypt(char* filename, TBackpack* backpack);
-
-#endif //BACKPACK_CIPHER_BACKPACK_H

@@ -1,3 +1,0 @@
-/home/grigoriy/CLionProjects/backpack_cipher/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/grigoriy/CLionProjects/backpack_cipher/cmake-build-debug/CMakeFiles/backpack_cipher.dir
-/home/grigoriy/CLionProjects/backpack_cipher/cmake-build-debug/CMakeFiles/edit_cache.dir

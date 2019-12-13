@@ -1,4 +1,0 @@
-/home/grigoriy/clion-2019.2.5/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/grigoriy/CLionProjects/backpack_cipher
--- Configuring done
--- Generating done
--- Build files have been written to: /home/grigoriy/CLionProjects/backpack_cipher/cmake-build-debug
